@@ -1,12 +1,20 @@
+//REACT
+import { Routes, Route } from 'react-router-dom'
+
+//COMPONENTS
+import Home from './routes/Home/Home'
+import Navigation from './components/navigation/Navigation'
+
 //CSS
 import './categories.styles.scss'
 
-//COMPONENTS
-import Directory from './components/directory/Directory'
-
 function App() {
   return (
-    <Directory />
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   )
 }
 
