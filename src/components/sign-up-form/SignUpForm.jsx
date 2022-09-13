@@ -5,6 +5,13 @@ import { useState } from "react"
 //FIREBASE
 import { signUpWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase"
 
+//COMPONENTS
+import FormInput from "../form-input/FormInput"
+import Button from "../button/Button"
+
+//CSS
+import './SignUpForm.scss'
+
 function SignUpForm() {
 
     const defaultFormFields = {
@@ -57,22 +64,16 @@ function SignUpForm() {
     }
 
     return (
-        <div>
-            <h1>Sign up with your email and password</h1>
+        <div className="sign-up-container">
+            <h2>Don't have an account?</h2>
+            <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="displayName">Display Name</label>
-                <input type="text" id="displayName" onChange={handleChange} value={displayName} required/>
+                <FormInput label='Display Name' type="text" id="displayName" onChange={handleChange} value={displayName} required/>
+                <FormInput label='Email' type="email" id="email" onChange={handleChange} value={email} required/>
+                <FormInput label='Password' type="password" id="password" onChange={handleChange} value={password} required/>
+                <FormInput label='Confirm Password' type="password" id="confirmPassword" onChange={handleChange} value={confirmPassword} required/>
 
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" onChange={handleChange} value={email} required/>
-
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" onChange={handleChange} value={password} required/>
-
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" onChange={handleChange} value={confirmPassword} required/>
-
-                <button type="submit">Sign Up</button>
+                <Button type="submit">Sign Up</Button>
             </form>
         </div>
     )
