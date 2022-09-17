@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './routes/Home/Home'
 import Navigation from './components/navigation/Navigation'
 import Auth from './components/auth/Auth'
+import Shop from './routes/Shop/Shop.jsx'
 
 //CSS
 import './categories.styles.scss'
@@ -14,6 +15,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
+        <Route path='shop' element={<Shop />} />
         <Route path='sign-in' element={<Auth />} />
       </Route>
     </Routes>
