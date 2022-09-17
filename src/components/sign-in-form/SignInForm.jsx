@@ -1,9 +1,9 @@
 //REACT
-import { useState, useContext } from "react"
+import { useState } from "react"
 
 
 //FIREBASE
-import { signInWithGooglePopup, createUserDocumentFromAuth, signIn } from "../../utils/firebase/firebase"
+import { signInWithGooglePopup, signIn } from "../../utils/firebase/firebase"
 
 //COMPONENTS
 import FormInput from "../form-input/FormInput"
@@ -12,8 +12,6 @@ import Button from "../button/Button"
 //CSS
 import './SignInForm.scss'
 
-//CONTEXT
-import { UserContext } from "../../context/UserContext"
 
 function SignInForm() {
 
@@ -23,7 +21,6 @@ function SignInForm() {
     }
 
     const [formFields, setFormFields] = useState(defaultFormFields)
-    const { setCurrentUser } = useContext(UserContext)
 
     const {email, password} = formFields
 
@@ -47,7 +44,6 @@ function SignInForm() {
         try {
             // TODO: Sign in
             const { user } = await signIn(email, password);
-            setCurrentUser(user);
             resetFormFields();
         } catch (error) {
             if(error.code === 'auth/user-not-found'){
@@ -65,9 +61,7 @@ function SignInForm() {
     }
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        setCurrentUser(user);
-        await createUserDocumentFromAuth(user);
+       await signInWithGooglePopup(); 
     }
 
     const resetFormFields = () => {
