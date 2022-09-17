@@ -14,7 +14,7 @@ import reportWebVitals from './reportWebVitals';
 
 //CONTEXT
 import { UserProvider } from './context/UserContext';
-import { ProductsProvider } from './context/ProductsContext';
+import { CategoriesProvider } from './context/CategoriesContext';
 import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,11 +22,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <UserProvider>
-        <ProductsProvider>
+        <CategoriesProvider>
           <CartProvider>
             <App />
           </CartProvider>
-        </ProductsProvider>
+        </CategoriesProvider>
       </UserProvider>
     </Router>
   </React.StrictMode>
