@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 //CSS
-import './CategoryPreview.scss'
+import {CategoryPreviewContainer, Title, Preview} from './CategoryPreview.styles.jsx'
 
 //COMPONENTS
 import ProductCard from '../product-card/ProductCard'
@@ -11,16 +11,16 @@ import ProductCard from '../product-card/ProductCard'
 function CategoryPreview( { title, products } ) {
 
     return (
-        <div className='category-preview-container'>
-            <h2><Link className='title' to={title}>{title.toUpperCase()}</Link></h2>
-            <div className="preview">
+        <CategoryPreviewContainer>
+            <h2><Title to={title}>{title.toUpperCase()}</Title></h2>
+            <Preview>
                 {
                     products.filter((_,index) => index < 4).map(product => 
                         <ProductCard key={product.id} product={product} />
                     )
                 }
-            </div>
-        </div>
+            </Preview>
+        </CategoryPreviewContainer>
     )
 }
 
