@@ -8,9 +8,6 @@ import Auth from './components/auth/Auth'
 import Shop from './routes/Shop/Shop.jsx'
 import Checkout from './routes/Checkout/Checkout'
 
-//CSS
-import './categories.styles.scss'
-
 function App() {
   return (
     <Routes>
