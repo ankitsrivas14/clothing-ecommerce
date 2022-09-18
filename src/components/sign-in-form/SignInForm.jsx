@@ -10,7 +10,7 @@ import FormInput from "../form-input/FormInput"
 import Button, {BUTTON_TYPES_CLASSES} from "../button/Button"
 
 //CSS
-import './SignInForm.scss'
+import {SignInContainer, ButtonsContainer} from './SignInForm.styles.jsx'
 
 
 function SignInForm() {
@@ -69,19 +69,19 @@ function SignInForm() {
     }
 
     return (
-        <div className="sign-up-container">
+        <SignInContainer>
             <h2>Already have an account?</h2>
             <span>Sign in with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput label='Email' type="email" name="email" onChange={handleChange} value={email} required/>
                 <FormInput label='Password' type="password" name="password" onChange={handleChange} value={password} required/>
 
-                <div className="buttons-container">
+                <ButtonsContainer>
                     <Button type="submit">Sign In</Button>
                     <Button type='button' onClick={signInWithGoogle} buttonType={BUTTON_TYPES_CLASSES.google}>Google sign In</Button>
-                </div>
+                </ButtonsContainer>
             </form>
-        </div>
+        </SignInContainer>
     )
 }
 
