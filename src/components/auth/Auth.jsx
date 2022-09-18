@@ -5,16 +5,16 @@ import SignUpForm from "../sign-up-form/SignUpForm";
 import SignInForm from "../sign-in-form/SignInForm";
 
 //CSS
-import './Auth.scss'
+import {AuthenticationContainer} from './Auth.styles'
 
 function SignIn() {
 
 
     return (
-        <div className="authentication-container">
+        <AuthenticationContainer>
             <SignInForm />
             <SignUpForm />
-        </div>
+        </AuthenticationContainer>
     )
 }
 
