@@ -51,7 +51,6 @@ export const db = getFirestore();
 //         batch.set(docRef, obj);
 //     })
 //     await batch.commit();
-//     console.log("DONE");
 // }
 
 export const getCategoriesAndDocuments = async () => {
