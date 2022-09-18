@@ -1,9 +1,14 @@
 //REACT
 import { useContext } from "react"
-import { Outlet, Link } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
 //CSS
-import './Navigation.scss'
+import {
+    NavigationContainer,
+    LogoContainer,
+    NavLinks,
+    NavLink
+} from './Navigation.styles'
 
 //ICONS
 import {ReactComponent as CrownLogo} from '../../assets/crown.svg'
@@ -30,22 +35,22 @@ function Navigation() {
 
     return (
         <>
-            <div className="navigation">
-                <Link className="logo-container" to='/'>
+            <NavigationContainer>
+                <LogoContainer to='/'>
                     <CrownLogo className="logo" />
-                </Link>
+                </LogoContainer>
                 
-                <div className="nav-links-container">
-                    <Link className="nav-link" to='/shop'>SHOP</Link>
+                <NavLinks>
+                    <NavLink to='/shop'>SHOP</NavLink>
                     {currentUser ? (
-                        <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
+                        <NavLink as='span' onClick={signOutHandler}>SIGN OUT</NavLink>
                     ) : (
-                        <Link className="nav-link" to='/sign-in'>SIGN IN</Link>
+                        <NavLink to='/sign-in'>SIGN IN</NavLink>
                     )}
                     <CartIcon />
-                </div>
+                </NavLinks>
                 {isCartOpen && <CartDropdown />}
-            </div>
+            </NavigationContainer>
             <Outlet />
         </>
     )
