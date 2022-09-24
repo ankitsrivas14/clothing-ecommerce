@@ -1,5 +1,5 @@
 //REACT
-import { createContext, useState, useEffect, useReducer } from "react"
+import { createContext, useEffect, useReducer } from "react"
 
 //FIREBASE
 import { onAuthStateChangedListener, createUserDocumentFromAuth, signOutUser } from "../utils/firebase/firebase";
