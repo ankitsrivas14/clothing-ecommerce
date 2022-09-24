@@ -17,7 +17,6 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 
 //CONTEXT
-import { UserProvider } from './context/UserContext';
 import { CategoriesProvider } from './context/CategoriesContext';
 import { CartProvider } from './context/CartContext';
 
