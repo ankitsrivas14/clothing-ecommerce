@@ -1,8 +1,6 @@
 //REACT
 import { createContext, useState, useEffect } from "react";
 
-//STATIC
-import SHOP_DATA from '../shop-data';
 
 //FIREBASE
 import { getCategoriesAndDocuments } from "../utils/firebase/firebase";
