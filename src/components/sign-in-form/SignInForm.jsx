@@ -42,8 +42,7 @@ function SignInForm() {
         }
 
         try {
-            // TODO: Sign in
-            const { user } = await signIn(email, password);
+            await signIn(email, password);
             resetFormFields();
         } catch (error) {
             if(error.code === 'auth/user-not-found'){

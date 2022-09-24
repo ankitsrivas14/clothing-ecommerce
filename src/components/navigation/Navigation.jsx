@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom"
 
 //REDUX
 import { useSelector } from "react-redux"
+import { selectIsCartOpen } from "../../store/cart/cart.selector"
 
 //CSS
 import {
@@ -16,9 +17,6 @@ import {
 //ICONS
 import {ReactComponent as CrownLogo} from '../../assets/crown.svg'
 
-//CONTEXT
-import { CartContext } from "../../context/CartContext"
-
 //FIREBASE
 import { signOutUser } from "../../utils/firebase/firebase"
 
@@ -28,7 +26,7 @@ import CartDropdown from "../cart-dropdown/CartDropdown"
 
 function Navigation() {
 
-    const { isCartOpen } = useContext(CartContext);
+    const isCartOpen = useSelector(selectIsCartOpen);
     const { currentUser } = useSelector(state => state.user);
 
     const signOutHandler = async () => {
