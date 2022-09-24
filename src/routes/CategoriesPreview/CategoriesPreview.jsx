@@ -2,6 +2,7 @@
 
 //REDUX
 import { useSelector } from "react-redux";
+import { selectCategoriesMap } from "../../store/category/category.selector";
 
 //COMPONENTS
 import CategoryPreview from "../../components/category-preview/CategoryPreview";
@@ -9,7 +10,7 @@ import CategoryPreview from "../../components/category-preview/CategoryPreview";
 
 function CategoriesPreview() {
 
-    const { categoriesMap } = useSelector(state => state.category);
+    const categoriesMap = useSelector(selectCategoriesMap);
 
     return (
         <>
