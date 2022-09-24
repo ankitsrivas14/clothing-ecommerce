@@ -26,13 +26,11 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <UserProvider>
-          <CategoriesProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </CategoriesProvider>
-        </UserProvider>
+        <CategoriesProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </CategoriesProvider>
       </Router>
     </Provider>
   </React.StrictMode>
