@@ -17,7 +17,6 @@ import './index.scss';
 import reportWebVitals from './reportWebVitals';
 
 //CONTEXT
-import { CategoriesProvider } from './context/CategoriesContext';
 import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,11 +24,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
       </Router>
     </Provider>
   </React.StrictMode>
