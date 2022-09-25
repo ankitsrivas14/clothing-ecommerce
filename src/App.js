@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 //REDUX
-import { setCurrentUser } from './store/user/user.action'
 import { useDispatch } from 'react-redux'
+import {checkUserSession } from './store/user/user.action'
 
 //COMPONENTS
 import Home from './routes/Home/Home'
@@ -13,22 +13,14 @@ import Auth from './components/auth/Auth'
 import Shop from './routes/Shop/Shop.jsx'
 import Checkout from './routes/Checkout/Checkout'
 
-//FIREBASE
-import { onAuthStateChangedListener, createUserDocumentFromAuth, signOutUser } from "./utils/firebase/firebase";
+
 
 function App() {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if(user){
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    })
-
-    return unsubscribe;
+    dispatch(checkUserSession());
   }, [])
 
   return (
