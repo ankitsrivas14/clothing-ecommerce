@@ -1,5 +1,6 @@
 //REACT
-import { Link } from 'react-router-dom'
+
+//REDUX
 
 
 //CSS
