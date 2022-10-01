@@ -88,7 +88,7 @@ export const signUp = async(email, password) => {
     if(!(email && password)){
         return;
     }
-    return createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password);
 }
 
 export const signIn = async(email, password) => {
