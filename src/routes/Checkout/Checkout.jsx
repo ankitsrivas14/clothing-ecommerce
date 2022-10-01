@@ -10,6 +10,7 @@ import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total} from './Checkout.
 
 //COMPONENTS
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
+import PaymentForm from '../../components/payment-form/PaymentForm.jsx';
 
 function Checkout() {
 
@@ -29,6 +30,7 @@ function Checkout() {
                 <CheckoutItem key={item.id} cartItem={item} />
             ))}
             <Total>Total: ${cartTotal}</Total>
+            <PaymentForm />
         </CheckoutContainer>
     )
 }
