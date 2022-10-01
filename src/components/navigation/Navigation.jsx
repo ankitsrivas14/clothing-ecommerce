@@ -3,8 +3,9 @@ import { useContext } from "react"
 import { Outlet } from "react-router-dom"
 
 //REDUX
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { selectIsCartOpen } from "../../store/cart/cart.selector"
+import { signOutStart } from "../../store/user/user.action"
 
 //CSS
 import {
@@ -26,11 +27,12 @@ import CartDropdown from "../cart-dropdown/CartDropdown"
 
 function Navigation() {
 
+    const dispatch = useDispatch();
     const isCartOpen = useSelector(selectIsCartOpen);
     const { currentUser } = useSelector(state => state.user);
 
-    const signOutHandler = async () => {
-        await signOutUser();
+    const signOutHandler = () => {
+        dispatch(signOutStart());
     }
 
     return (
