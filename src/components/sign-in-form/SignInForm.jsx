@@ -3,7 +3,7 @@ import { useState } from "react"
 
 //REDUX
 import { useDispatch } from "react-redux"
-import { googleSignInStart } from "../../store/user/user.action"
+import { googleSignInStart, emailSignInStart } from "../../store/user/user.action"
 
 //FIREBASE
 import { signInWithGooglePopup, signIn } from "../../utils/firebase/firebase"
@@ -46,7 +46,7 @@ function SignInForm() {
         }
 
         try {
-            await signIn(email, password);
+            dispatch(emailSignInStart(email, password))
             resetFormFields();
         } catch (error) {
             if(error.code === 'auth/user-not-found'){
